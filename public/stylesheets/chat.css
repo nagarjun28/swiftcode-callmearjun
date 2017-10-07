@@ -1,1 +1,6 @@
-
+#message-pane {
+    background: url(https://cdn-images-1.medium.com/max/1600/1*s3GOET4SaBH3xrdW0YDS-A.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
