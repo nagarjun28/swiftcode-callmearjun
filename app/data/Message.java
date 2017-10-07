@@ -1,10 +1,10 @@
 package data;
 
 public class Message {
-    Stirng text;
-    Stirng timestamp;
+    public String text;
+    public String timestamp;
     public enum Sender{BOT,USER};
     public Sender sender;
-    }
+
 
 }

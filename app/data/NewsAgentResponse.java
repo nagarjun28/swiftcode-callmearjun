@@ -5,8 +5,4 @@ public class NewsAgentResponse {
     public String intent;
 
 
-
-
-
-
 }
