@@ -28,5 +28,10 @@ public class NewsAgentService {
             JsonNode response = responsePromise.thenApply(WSResponse::asJson).toCompletableFuture().get();
             newsAgentResponse.keyword=response.get("result").get("parameters").get("keyword").asText();git
         }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return newsAgentResponse;
+
     }
 }
