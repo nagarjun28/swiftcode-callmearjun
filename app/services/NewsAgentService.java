@@ -14,6 +14,19 @@ public class NewsAgentService {
 
     public NewsAgentResponse getNewsAgentResponse(String keyword,UUID sessionid)
     {
-        return null;
+        NewsAgentResponse newsAgentResponse=new NewsAgentResponse();
+        try{
+            WSRequest queryResquest=WS.url("http://api.api.ai/api/query");
+            CompletionStage<WSResponse> responsePromise =queryResquest
+                    .setQueryParameter("v","20150910")
+                    .setQueryParameter("query",keyword)
+                    .setQueryParameter("lang","en")
+                    .setQueryParameter("sessionId", sessionid.toString())
+                    .setQueryParameter("timezone","2017-08-09T03:25:23+0530")
+                    .setHeader("Authorization","Bearer")
+                    .get();
+            JsonNode response = responsePromise.thenApply(WSResponse::asJson).toCompletableFuture().get();
+            newsAgentResponse.keyword=response.get("result").get("parameters").get("keyword").asText();git
+        }
     }
 }
