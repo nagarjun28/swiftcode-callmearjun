@@ -1,7 +1,7 @@
 var app = angular.module('chatApp', ['ngMaterial']);
 app.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('amber', {
+        .primaryPalette('deep-orange', {
                     'default': '400', // by default use shade 400 from the pink palette for primary intentions
                     'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
                     'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
@@ -9,7 +9,8 @@ app.config(function ($mdThemingProvider) {
                 })
                 .accentPalette('teal', {
                     'default': 'A400'
-                });
+                })
+                .dark();
 });
 
 app.controller('chatController', function ($scope, $sce) {
