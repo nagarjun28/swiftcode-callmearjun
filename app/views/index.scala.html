@@ -28,15 +28,17 @@
         </md-content>
         <md-card id="form-card" flex="10" layout="row" layout-align="center center" class="md-whiteframe-8dp">
             <form flex="90" layout="row" ng-submit="sendMessage()">
-                <md-input-container flex>
+                <md-input-container flex class="mdprimary">
                     <label>Message</label>
                     <input ng-model="userMessage">
                 </md-input-container>
             </form>
-            <md-button id="form-button" flex="10" ng-click="sendMessage()">
+            <div flex="10">
+            <md-button class="md-fab"  ng-click="sendMessage()">
                 <md-icon md-svg-icon="/assets/images/but.svg"></md-icon>
 
             </md-button>
+            </div>
 
         </md-card>
     </md-card>
